@@ -18,6 +18,7 @@ mainList.shopName = prompt("Название вашего магазина", "С
 
 for (i = 0; i < 3; i++) {
 	mainList.arrShopGoods[i] = prompt("Какой товар?", "Тест");
+	if 
 }
 
 alert(mainList.budget / 30);
