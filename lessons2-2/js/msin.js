@@ -22,3 +22,7 @@ for (i = 0; i <7; i++) {
 		console.log(text);
 	}
 }
+//alert(null || 2 && 3 || 4);
+
+
+console.log([] + {});

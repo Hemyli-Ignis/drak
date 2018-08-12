@@ -23,25 +23,28 @@ if (time > 6 && time < 20) {
 	mainList.open = false;
 }
 
-if (mainList.open) {
+/*if (mainList.open) {
 	while (i < 3) {
 		let a  = prompt(i +")" + " Какой товар?", "Тест");
-		if ( (typeof(a)) === 'string' && a != '' &&  a.length < 50 )  {
+		if ( (typeof(a)) === 'string' && !isNaN(a) && a != '' &&  a.length < 50 )  {
 			mainList.arrShopGoods[i] = a;
 			i++;
 		} else 
 			alert("Вы вели не верное значение, попрбуйте еще раз");
 	}
-}
+}*/
 
 alert("Ваш бюджет на день " + (mainList.budget / 30).toFixed(1));
 
-console.log(mainList);
-
-/*for (i = 0; i < 3; i++) {
-	mainList.arrShopGoods[i] = prompt("Какой товар?", "Тест");
-	if 
-}*/
+if (mainList.open) {
+	for (i = 1; i < 4; i++) {
+		let a  = prompt(i +")" + " Какой товар?", "Тест");
+		while ((typeof(a)) !== 'string' || !isNaN(a) || a == '' ||  a.length > 50 ) {
+			a = prompt(i +")" + " Введено не верно: Какой товар?", "Тест");
+		}
+		mainList.arrShopGoods[i] = a;
+	}
+}
 
 /*if (mainList.open) {
 	do {
@@ -53,4 +56,5 @@ console.log(mainList);
 			alert("Вы вели не верное значение, попрбуйте еще раз");
 	}
 	while (i < 3)
+	(typeof(a)) === 'string' && a != '' &&  a.length < 50
 }*/
