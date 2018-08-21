@@ -15,7 +15,7 @@ let mainList = {
 			mainList.budget = prompt("Ваш бюджет", "30000");
 
 			while (isNaN(mainList.budget) || mainList.budget == "" || mainList.budget == null) {
-				mainList.budget = prompt("Введено не чисо: Ваш бюджет", "30000");
+				mainList.budget = prompt("Введено не число: Ваш бюджет", "30000");
 			}
 
 			mainList.shopName = prompt("Название вашего магазина", "Сталкер").toUpperCase();
@@ -25,15 +25,15 @@ let mainList = {
 			let time = +prompt("Сколько сейчас времени? \n *Режим работы с 6 до 20", "10");
 
 			while (isNaN(time) || time == "" || time == null) {
-				time = prompt("Введено не чисо: Сколько сейчас времени? \n *Режим работы с 6 до 20", "10");
+				time = prompt("Введено не число: Сколько сейчас времени? \n *Режим работы с 6 до 20", "10");
 			}
 
 			if (time > 6 && time < 20) {
 				mainList.open = true;
-				alert("Время работать");
+				alert("Время работать")
 			} else {
 				mainList.open = false;
-				alert("Магазин закрыт");
+				alert("Магазин закрыт")
 			}	
 		},
 
@@ -54,18 +54,18 @@ let mainList = {
 		},
 
 		discountSystem: function discountSystem() {
-			let priseTotals;
+			let priseTotals
 			if (mainList.discount) {
-				priseTotals = (prise / 100) * 20;
+				priseTotals = (prise / 100) * 80;
 				prise -= priseTotals;
-				console.log(priseTotals);
+				console.log(prise);
 			}
 		},
 
 		hiringEmployees:function hiringEmployees() {
 			for (let i = 1; i < 5; i++) {
 				mainList.Employers.name[i] = prompt(i + ")" + " Имя сотрудника", "Иван " + i);
-				mainList.Employers.tell[i] = prompt(i + ")" +  "Телефон", "8 888 888 88 88");
+				mainList.Employers.tell[i] = prompt(i + ")" +  "Имя сотрудника", "8 888 888 88 88");
 			}
 		},
 
