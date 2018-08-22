@@ -91,8 +91,8 @@ let mainList = {
 
 		whatToBuy: function whatToBuy() {
 			mainList.shopItems.forEach(function(item){
-				alert("У нас вы можите купит: " + item);
-			})
+				alert("У нас вы можите купить: " + item);
+			});
 		},
 
 		shopIncludes: function shopIncludes() {
