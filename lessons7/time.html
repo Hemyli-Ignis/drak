@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<p>
+	<span class="textData"></span> : <span class="textData"></span> : <span class="textData"></span>
+	</p>
+
+
+	<script>
+		let data = new Date(),
+			textData = document.getElementsByClassName('textData');
+
+		textData.textContent = data;
+
+		let seconds = data.getSeconds(),
+			minutes = data.getMinutes(),
+			hours = data.getHours();
+
+		textData[0].textContent = hours;
+		textData[1].textContent = minutes;
+		textData[2].textContent = seconds;
+
+		function time() {
+			if (seconds <= 9) {
+				textData[2].textContent = '0' + seconds++;
+			} else {
+				textData[2].textContent = seconds++;
+			}
+			
+			if (seconds > 59) {
+				if (minutes <= 9) {
+					textData[1].textContent = '0' + minutes++;
+				} else {
+					textData[1].textContent = minutes++;
+				}
+				seconds = 0;
+			}
+
+			if (minutes > 59) {
+				if (hours <= 9) {
+					textData[0].textContent = '0' + hours++;
+				} else {
+					textData[0].textContent = hours++;
+				}
+				minutes = 0;
+			}
+
+			if (hours > 23) {
+				hours = 0;
+				textData[0].textContent = 00;
+			}
+		};
+
+		setInterval(time, 1000);
+
+	</script>
+</body>
+</html>
